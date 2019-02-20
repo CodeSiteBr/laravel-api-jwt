@@ -7,58 +7,126 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+# Laravel autenticação JWT
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Projeto em Laravel 5.7 com autenticação JWT
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+-   [Git](https://git-scm.com/)
+-   [Composer](http://getcomposer.org/doc/00-intro.md)
 
-## Learning Laravel
+## Instalação
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+1. Efetuar a instalação clonando ou baixando do repositorio.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+    ```bash
+    git clone https://github.com/CodeSiteBr/laravel-autenticacao-jwt.git
+    ```
 
-## Laravel Sponsors
+    ```bash
+    git clone git@github.com:CodeSiteBr/laravel-autenticacao-jwt.git
+    ```
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+    OU Dowload [laravel-autenticacao-jwt](https://github.com/CodeSiteBr/laravel-autenticacao-jwt/archive/master.zip)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
+2. Entrar na pasta do projeto, execute:
+    ```bash
+    cd laravel-autenticacao-jwt
+    ```
+3. Se composer está instalado, execute:
+    ```bash
+    composer install
+    ```
+5. Criar o arquivo .env, execute:
+    ```bash
+    cp .env.example .env
+    ```
+6. Gerar uma nova chave no arquivo .env, execute:
+    ```bash
+    php artisan key:generate
+    ```
+6. Gerar uma chave JWT no arquivo .env, execute:
+    ```bash
+    php artisan jwt:secret
+    ```
 
-## Contributing
+    OBS: Quando várias solicitações simultâneas são feitas com o mesmo JWT, é possível que alguns deles falhem, devido ao  auto-refresh token em todos os pedidos.
+    Defina o tempo de tolerancia em segundos para evitar falha na solicitação paralela.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    No arquivo .env, tempo de tolerancia e segundos
+    ```bash
+    JWT_BLACKLIST_GRACE_PERIOD=30
+    ```
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+8. Criar o arquivo de banco de dados sqlite
+    ```bash
+    touch database/database.sqlite
+    ```
+
+7. Configurar no arquivo .env o acesso ao SQLite
+
+    ```bash
+    DB_CONNECTION=sqlite
+    #DB_HOST=127.0.0.1
+    #DB_PORT=3306
+    #DB_DATABASE=homestead
+    #DB_USERNAME=homestead
+    #DB_PASSWORD=secret
+    ```
+
+8. Criar as tabelas e popular com o migrate
+
+    ```bash
+    php artisan migrate --seed
+    ```
+
+    Comando para criar novamente as tabelas e popular
+
+    ```bash
+    php artisan migrate:refresh --seed
+    ```
+
+9. Configurar o envio de e-mail no arquivo .env
+
+    Se for em desenvolvimento crie uma conta no [mailtrap](https://mailtrap.io/) e configure as linhas.
+
+    ```bash
+    MAIL_USERNAME=null
+    MAIL_PASSWORD=null
+    ```
+
+    Ou configuração completa de seu servidor de e-mail
+
+    ```bash
+    MAIL_DRIVER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=null
+    MAIL_PASSWORD=null
+    MAIL_ENCRYPTION=null
+    ```
+
+13. Para iniciar o servidor do laravel
+
+    ```bash
+    php artisan serve
+    ```
+
+    Ou em uma porta específica
+
+    ```bash
+    php artisan serve --port=300
+    ```
+
+14. Agora você deve ser capaz de visitar o caminho para onde você instalou o aplicativo e ver a página inicial padrão.
+
+    [localhost:8000](http://localhost:8000)  
+    [localhost:300](http://localhost:300/)
+
+    > usuario: admin@user.com  
+    > senha: secret
 
 ## License
 
