@@ -30,11 +30,6 @@ class ProdutoController extends Controller
         return $produto;
     }
 
-    public function edit(Produto $produto)
-    {
-        //
-    }
-
     public function update(Request $request, $id)
     {
         $produto = Produto::find($id);
