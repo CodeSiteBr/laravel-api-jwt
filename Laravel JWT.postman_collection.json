@@ -1,0 +1,756 @@
+{
+	"info": {
+		"_postman_id": "90c0db7f-aea6-4ff6-823c-7c92f2251fd4",
+		"name": "Laravel JWT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos"
+							]
+						},
+						"description": "Lista de produtos"
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "Indicar o laravel para enviar respostas  json",
+								"type": "text"
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": "Requisição via ajax",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "titulo",
+									"value": "Celular S5",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "descricao",
+									"value": "Uma descrição para este produto",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos"
+							]
+						},
+						"description": "Cadastrar um produto"
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos",
+								"1"
+							]
+						},
+						"description": "Exibir um produto"
+					},
+					"response": []
+				},
+				{
+					"name": "Editar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "titulo",
+									"value": "Celular Iphone X",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "descricao",
+									"value": "Uma descrição para este iphone",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos",
+								"1"
+							]
+						},
+						"description": "Atualizar um produto"
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/produtos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"produtos",
+								"1"
+							]
+						},
+						"description": "Deletando um produto"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autenticação JWT",
+			"item": [
+				{
+					"name": "Usuarios",
+					"item": [
+						{
+							"name": "Listar",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NTA3ODg1NzAsImV4cCI6MTU1MDc5MjE3MCwibmJmIjoxNTUwNzg4NTcwLCJqdGkiOiJoWHpua1oyZThIRDc5bUFNIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.lZuziVEbq1_56cE-Fm8AXyDYpoJlBM7MnlyS47iLRhk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"usuarios"
+									]
+								},
+								"description": "Exibir um produto"
+							},
+							"response": []
+						},
+						{
+							"name": "Cadastrar",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU1MDc3NzYwNSwiZXhwIjoxNTUwNzgxMjA1LCJuYmYiOjE1NTA3Nzc2MDUsImp0aSI6InlmN1NCcEZUUENScktZZ1ciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJuYW1lIjoiUGVuZWxvcGUgSGFja2V0dCBWIiwiZW1haWwiOiJhZG1pbkB1c2VyLmNvbSJ9.WNi4y_gCQrKnTjwzsivCC1nGgQboO_IRCOqRsU_mqUc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/usuarios",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"usuarios"
+									]
+								},
+								"description": "Cadastrar um produto"
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvdXN1YXJpb3NcLzEwIiwiaWF0IjoxNTUwNzg5NzgyLCJleHAiOjE1NTA3OTM0MTAsIm5iZiI6MTU1MDc4OTgxMCwianRpIjoidFpSVnpwUDVGbkVQcTlZaiIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSIsIm5hbWUiOiJQZW5lbG9wZSBIYWNrZXR0IFYiLCJlbWFpbCI6ImFkbWluQHVzZXIuY29tIn0.peQy6_iFy2tg8dKo8CQ19TcIQFImeEM42fffQZIDOaY"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/usuarios/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"1"
+									]
+								},
+								"description": "Exibir um produto"
+							},
+							"response": []
+						},
+						{
+							"name": "Editar",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU1MDc3NzYwNSwiZXhwIjoxNTUwNzgxMjA1LCJuYmYiOjE1NTA3Nzc2MDUsImp0aSI6InlmN1NCcEZUUENScktZZ1ciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJuYW1lIjoiUGVuZWxvcGUgSGFja2V0dCBWIiwiZW1haWwiOiJhZG1pbkB1c2VyLmNvbSJ9.WNi4y_gCQrKnTjwzsivCC1nGgQboO_IRCOqRsU_mqUc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/usuarios/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"usuarios",
+										"1"
+									]
+								},
+								"description": "Atualizar um produto"
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"1"
+									]
+								},
+								"description": "Deletando um produto"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Produtos",
+					"item": [
+						{
+							"name": "Listar",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NTA3ODg5NzMsImV4cCI6MTU1MDc5MjU3MywibmJmIjoxNTUwNzg4OTczLCJqdGkiOiJ3eUxmV1lUUk9NYjlMOVdsIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.vrPFQsb3M3LTJIi_7-SZYjyGMnBhKoM7cZ7e_SIzBGs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/produtos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"produtos"
+									]
+								},
+								"description": "Exibir um produto"
+							},
+							"response": []
+						},
+						{
+							"name": "Cadastrar",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NTA3ODMyODEsImV4cCI6MTU1MDc4Njg4MSwibmJmIjoxNTUwNzgzMjgxLCJqdGkiOiJRbkY2U0dWeE55YXh2UENSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.2jitUsvBSt8gF6sBxdZ-AAV9vQhokys7XiCgZTpyolY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"titulo\": \"Computador\",\n    \"descricao\": \"Uma descrição qualquer de um computador\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/produtos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"produtos"
+									]
+								},
+								"description": "Cadastrar um produto"
+							},
+							"response": []
+						},
+						{
+							"name": "Consultar",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3MiLCJpYXQiOjE1NTA3ODMyODEsImV4cCI6MTU1MDc4NzEzNCwibmJmIjoxNTUwNzgzNTM0LCJqdGkiOiJzamFiS3FZbEZjNXBxdXlsIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.QKcBnRv4QHy8wOJZzaa6o0s8iqIy8sFE2T1jKTRFSYc"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/produtos/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"produtos",
+										"9"
+									]
+								},
+								"description": "Exibir um produto"
+							},
+							"response": []
+						},
+						{
+							"name": "Editar",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3NcLzkiLCJpYXQiOjE1NTA3ODMyODEsImV4cCI6MTU1MDc4NzE3NSwibmJmIjoxNTUwNzgzNTc1LCJqdGkiOiJJNDRVandsQ1UxbVZnN3JrIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.UltRN9tnhyjNXpVPv7c2i3W1y4Z1c72PYUG2htcYEZk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"titulo\": \"Computador alterado\",\n\t\"descricao\": \"Descrição alterada\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/produtos/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"produtos",
+										"9"
+									]
+								},
+								"description": "Atualizar um produto"
+							},
+							"response": []
+						},
+						{
+							"name": "Deletar",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3NcLzkiLCJpYXQiOjE1NTA3ODMyODEsImV4cCI6MTU1MDc4NzIzNCwibmJmIjoxNTUwNzgzNjM0LCJqdGkiOiJJYjlDNVFkRFZkT3VJRWYzIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.8Fja94rCz789IXnVnOcN_2d8H4wp7yGA3MTPCqLqGHI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/v1/produtos/9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"produtos",
+										"9"
+									]
+								},
+								"description": "Deletando um produto"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@user.com\",\n  \"password\": \"secret\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9yZWZyZXNoIiwiaWF0IjoxNTUwNzc2MzM1LCJleHAiOjE1NTA3Nzk5NTQsIm5iZiI6MTU1MDc3NjM1NCwianRpIjoicG8yR3RRb3RlZkVxeEhjVyIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSIsIm5hbWUiOiJQZW5lbG9wZSBIYWNrZXR0IFYiLCJlbWFpbCI6ImFkbWluQHVzZXIuY29tIn0.NfTlcx_ks5TJ0icr0k-wGalqu9NGCC2TomNgCiPovuc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/refresh",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"refresh"
+							]
+						},
+						"description": "Exibir um produto"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTU1MDc3NDM4MCwiZXhwIjoxNTUwNzc3OTgwLCJuYmYiOjE1NTA3NzQzODAsImp0aSI6IkdzYzNqeTN4NG9jajd6V1IiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEiLCJuYW1lIjoiUGVuZWxvcGUgSGFja2V0dCBWIiwiZW1haWwiOiJhZG1pbkB1c2VyLmNvbSJ9.OOcl4-MuUnkZkmqVYGFrHhcCE3BqLw1ulPHaozCk4Uw"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"logout"
+							]
+						},
+						"description": "Exibir um produto"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
