@@ -7,32 +7,33 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-# Laravel autenticação JWT
+# Laravel API com autenticação JWT
 
-Projeto em Laravel 5.7 com autenticação JWT
+Projeto API em Laravel 5.7 com autenticação JWT
 
 ## Requisitos
 
 -   [Git](https://git-scm.com/)
 -   [Composer](http://getcomposer.org/doc/00-intro.md)
+-   [Postman](https://www.getpostman.com/downloads/)
 
 ## Instalação
 
 1. Efetuar a instalação clonando ou baixando do repositorio.
 
     ```bash
-    git clone https://github.com/CodeSiteBr/laravel-autenticacao-jwt.git
+    git clone https://github.com/CodeSiteBr/laravel-api-jwt.git
     ```
 
     ```bash
-    git clone git@github.com:CodeSiteBr/laravel-autenticacao-jwt.git
+    git clone git@github.com:CodeSiteBr/laravel-api-jwt.git
     ```
 
-    OU Dowload [laravel-autenticacao-jwt](https://github.com/CodeSiteBr/laravel-autenticacao-jwt/archive/master.zip)
+    OU Dowload [laravel-api-jwt](https://github.com/CodeSiteBr/laravel-api-jwt/archive/master.zip)
 
 2. Entrar na pasta do projeto, execute:
     ```bash
-    cd laravel-autenticacao-jwt
+    cd laravel-api-jwt
     ```
 3. Se composer está instalado, execute:
     ```bash
@@ -127,6 +128,11 @@ Projeto em Laravel 5.7 com autenticação JWT
 
     > usuario: admin@user.com  
     > senha: secret
+
+9. Importar o arquivo da raiz do projeto para o postman 
+    ```bash
+    Laravel JWT.postman_collection.json 
+    ```
 
 ## License
 
