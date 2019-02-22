@@ -7,9 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-# Laravel API com autenticação JWT
+# Laravel API Restful com autenticação JWT
 
-Projeto API em Laravel 5.7 com autenticação JWT
+Projeto api restful em Laravel 5.7 com autenticação JWT
 
 ## Requisitos
 
