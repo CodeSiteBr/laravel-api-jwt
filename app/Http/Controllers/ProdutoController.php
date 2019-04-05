@@ -29,7 +29,7 @@ class ProdutoController extends Controller
     {
         $data = Produto::latest()->paginate(5);
 
-        return view('produto.index', compact('data'))
+        return view('produtos.index', compact('data'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -40,7 +40,7 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('produto.create');
+        return view('produtos.create');
     }
 
     /**
