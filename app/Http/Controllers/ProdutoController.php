@@ -9,6 +9,18 @@ use Illuminate\Support\Facades\Redirect;
 class ProdutoController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        // $this->middleware('auth');
+        // $this->middleware('auth', ['except' => 'index']);
+        // $this->middleware('auth', ['except' => ['index', 'create']]);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
