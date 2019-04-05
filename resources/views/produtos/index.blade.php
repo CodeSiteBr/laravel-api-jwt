@@ -41,7 +41,7 @@
                 <td>{{ $row->titulo }}</td>
                 <td>{{ $row->descricao }}</td>
                 <td>
-
+                    <a href="{{ route('produtos.show', $row->id) }}" class="btn btn-primary btn-sm">Exibir</a>
                 </td>
             </tr>
         @endforeach
