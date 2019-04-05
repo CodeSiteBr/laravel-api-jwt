@@ -19,6 +19,16 @@ class CreateProdutosTable extends Migration
             $table->text('descricao');
             $table->timestamps();
         });
+
+        // Schema::create('produtos', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->integer('user_id')->unsigned();
+        //     $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        //     $table->string('produto');
+        //     $table->integer('quantidade');
+        //     $table->double('preco', 10, 2)->default(0);
+        //     $table->timestamps();
+        // });
     }
 
     /**
