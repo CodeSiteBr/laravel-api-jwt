@@ -4,12 +4,18 @@
 <div class="container">
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
-            <p>{{ $$message }}</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <p>{{ $message }}</p>
         </div>
     @endif
 
     @if ($errors->any())
         <div class="alert alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{ $error}}}</li>
@@ -19,7 +25,7 @@
     @endif
 
     <div align="right" class="form-group">
-        <a href="{{ route('produtos.create') }}" class="btn btn-success">Add</a>
+        <a href="{{ route('produtos.create') }}" class="btn btn-success">Adicionar</a>
     </div>
 
     <table class="table table-bordered table-striped">
@@ -40,7 +46,8 @@
             </tr>
         @endforeach
     </table>
-
-    {!! $data->links() !!}
+    <div class="row justify-content-center">
+        {!! $data->links() !!}
+    </div>
 </div>
 @endsection
