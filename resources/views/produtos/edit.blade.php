@@ -21,19 +21,20 @@
                         <div class="card-header">Cadastro de produtos</div>
 
                         <div class="card-body">
-                            <form action="{{ route('produtos.store') }}" method="post">
+                            <form action="{{ route('produtos.update', $data->id) }}" method="post">
                                 @csrf
+                                @method('PATCH')
 
                                 <div class="form-group row">
                                     <label for="titulo" class="col-md-4 col-form-label text-md-right">Titulo</label>
                                     <div class="col-md-6">
-                                        <input type="text" name="titulo" id="titulo" class="form-control">
+                                    <input type="text" name="titulo" id="titulo" class="form-control" value="{{ $data->titulo }}">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label for="descricao" class="col-md-4 col-form-label text-md-right">Descrição</label>
                                     <div class="col-md-6">
-                                        <textarea name="descricao" id="descricao" rows="5" class="form-control"></textarea>
+                                        <textarea name="descricao" id="descricao" rows="5" class="form-control">{{ $data->descricao }}</textarea>
                                     </div>
                                 </div>
 

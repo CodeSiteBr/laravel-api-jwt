@@ -72,7 +72,8 @@ class ProdutoController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Produto::findOrFail($id);
+        return view ('produtos.show', compact('data'));
     }
 
     /**
@@ -83,7 +84,8 @@ class ProdutoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Produto::findOrFail($id);
+        return view ('produtos.edit', compact('data'));
     }
 
     /**
@@ -95,7 +97,19 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'titulo'    => 'required',
+            'descricao' => 'required'
+        ]);
+
+        $produto = Produto::findOrFail($id);
+        $update = $produto->update($request->all());
+
+        if($update){
+            return redirect('produtos')->with('success', 'Produto editado com sucesso.');
+        }else{
+            return redirect('produtos')->with('error', 'Erro ao editar o Produto.');
+        }
     }
 
     /**
@@ -106,6 +120,13 @@ class ProdutoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $produto = Produto::findOrFail($id);
+        $delete = $produto->delete();
+
+        if($delete){
+            return redirect('produtos')->with('success', 'Produto deletado com sucesso.');
+        }else{
+            return redirect('produtos')->with('error', 'Erro ao deletar o Produto.');
+        }
     }
 }

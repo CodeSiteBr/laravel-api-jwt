@@ -42,6 +42,22 @@
                 <td>{{ $row->descricao }}</td>
                 <td>
                     <a href="{{ route('produtos.show', $row->id) }}" class="btn btn-primary btn-sm">Exibir</a>
+                    <a href="{{ route('produtos.edit', $row->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                    <form id="delete-form-{{ $row->id }}" action="{{ route('produtos.destroy', $row->id) }}" method="post" style="display: none;">
+                        @csrf
+                        @method('delete')
+                    </form>
+
+                    <a class="btn btn-sm btn-danger"
+                    onclick="
+                    if(confirm('Você tem certeza?')){
+                        event.preventDefault();
+                        document.getElementById('delete-form-{{ $row->id }}').submit();
+                    } else {
+                        event.preventDefault();
+                    }">
+                        <i class="fa fa-trash"></i> Deletar
+                    </a>
                 </td>
             </tr>
         @endforeach
