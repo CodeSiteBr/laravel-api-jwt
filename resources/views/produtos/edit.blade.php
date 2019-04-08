@@ -40,9 +40,9 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-8 offset-md-4">
-                                        <input type="submit" name="add" id="add" class="btn btn-success" value="Adicionar">
+                                        <button type="submit" name="add" id="add" class="btn btn-success"><i class="fa fa-save"></i> Salvar</button>
 
-                                        <a href="{{ route('produtos.index') }}" class="btn btn-dark">Voltar</a>
+                                        <a href="{{ route('produtos.index') }}" class="btn btn-dark"><i class="fa fa-undo"></i> Voltar</a>
                                     </div>
 
                                 </div>

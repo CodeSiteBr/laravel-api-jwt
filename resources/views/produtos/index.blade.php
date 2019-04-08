@@ -25,7 +25,7 @@
     @endif
 
     <div align="right" class="form-group">
-        <a href="{{ route('produtos.create') }}" class="btn btn-success">Adicionar</a>
+        <a href="{{ route('produtos.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> Adicionar</a>
     </div>
 
     <table class="table table-bordered table-striped">
@@ -41,8 +41,8 @@
                 <td>{{ $row->titulo }}</td>
                 <td>{{ $row->descricao }}</td>
                 <td>
-                    <a href="{{ route('produtos.show', $row->id) }}" class="btn btn-primary btn-sm">Exibir</a>
-                    <a href="{{ route('produtos.edit', $row->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="{{ route('produtos.show', $row->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i> Exibir</a>
+                    <a href="{{ route('produtos.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-pen"></i> Editar</a>
                     <form id="delete-form-{{ $row->id }}" action="{{ route('produtos.destroy', $row->id) }}" method="post" style="display: none;">
                         @csrf
                         @method('delete')
