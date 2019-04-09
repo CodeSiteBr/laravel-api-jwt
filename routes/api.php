@@ -5,6 +5,7 @@ Route::prefix('v1')->group(function () {
     Route::post('refresh', 'Api\AuthController@refresh')->name('api.v1.refresh');
 
     Route::group(['middleware' => ['auth:api','jwt.refresh'], 'namespace' => 'Api', 'as' => 'api.v1.'], function () {
+        Route::post('me', 'AuthController@me')->name('me');
         Route::post('logout', 'AuthController@logout')->name('logout');
 
         Route::resource('usuarios', 'UserController', ['except' => ['create', 'edit']]);
