@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Tymon\JWTAuth\Exceptions\JWTException;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class AuthController extends Controller
 {
@@ -12,37 +13,69 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $this->validateLogin($request);
+        try {
 
-        $credentials = $this->credentials($request);
+            $this->validateLogin($request);
 
-        $token = \JWTAuth::attempt($credentials);
+            $credentials = $this->credentials($request);
+            $token = \JWTAuth::attempt($credentials);
+            return $this->responseToken($token);
 
-        return $this->responseToken($token);
+        } catch (JWTException $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 
     private function responseToken($token)
     {
-        return $token ? ['token' => $token] :
-            response()->json([
-                'error' => \Lang::get('auth.failed')
-            ], 400);
+            if($token){
+                return response()->json([
+                    'access_token' => $token,
+                    'token_type' => 'bearer',
+                    'expires_in' => \Auth::guard('api')->factory()->getTTL() * 60
+                ]);
+            }else{
+                return response()->json([
+                    'error' => \Lang::get('auth.failed')
+                ], 400);
+            }
+
     }
 
     public function logout()
     {
-        \Auth::guard('api')->logout();
-        return response()->json([], 204); //No-content
+        try {
+            \Auth::guard('api')->logout();
+            return response()->json([], 204); //No-content
+        } catch (JWTException $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 
     public function refresh()
     {
-        $token = \Auth::guard('api')->refresh();
-        return ['token' => $token];
+        try {
+            $token = \Auth::guard('api')->refresh();
+            return $this->responseToken($token);
+        } catch (JWTException $e) {
+            return response()->json([
+                'message' => $e->getMessage()
+            ], 401);
+        }
     }
 
     public function me()
     {
-        return response()->json(\Auth::guard('api')->user());
+        try {
+            return response()->json(\Auth::guard('api')->user());
+        } catch (JWTException $e) {
+            return response()->json([
+                'error' => $e->getMessage()
+            ], 500);
+        }
     }
 }

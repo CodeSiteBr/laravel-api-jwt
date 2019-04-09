@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "90c0db7f-aea6-4ff6-823c-7c92f2251fd4",
-		"name": "Laravel JWT",
+		"_postman_id": "8eefea1e-1117-4f2b-9ce0-4057a3285426",
+		"name": "Laravel JWT - Local",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Produtos",
+			"name": "Produtos sem autenticação",
 			"item": [
 				{
 					"name": "Listar",
@@ -41,7 +41,7 @@
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
+								"value": "application/json",
 								"type": "text"
 							},
 							{
@@ -58,21 +58,8 @@
 							}
 						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "titulo",
-									"value": "Celular S5",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "descricao",
-									"value": "Uma descrição para este produto",
-									"type": "text",
-									"disabled": true
-								}
-							]
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Computador\",\n    \"descricao\": \"Uma descrição qualquer de um computador\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/api/produtos",
@@ -124,25 +111,13 @@
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
+								"value": "application/json",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "titulo",
-									"value": "Celular Iphone X",
-									"type": "text",
-									"disabled": true
-								},
-								{
-									"key": "descricao",
-									"value": "Uma descrição para este iphone",
-									"type": "text"
-								}
-							]
+							"mode": "raw",
+							"raw": "{\n    \"titulo\": \"Editado\",\n    \"descricao\": \"Descrição editada\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8000/api/produtos/1",
@@ -171,7 +146,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/produtos/1",
+							"raw": "http://localhost:8000/api/produtos/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -180,7 +155,7 @@
 							"path": [
 								"api",
 								"produtos",
-								"1"
+								"4"
 							]
 						},
 						"description": "Deletando um produto"
@@ -426,7 +401,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NTA3ODg5NzMsImV4cCI6MTU1MDc5MjU3MywibmJmIjoxNTUwNzg4OTczLCJqdGkiOiJ3eUxmV1lUUk9NYjlMOVdsIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.vrPFQsb3M3LTJIi_7-SZYjyGMnBhKoM7cZ7e_SIzBGs",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NTQ4Mjk2OTIsImV4cCI6MTU1NDgzMzI5MiwibmJmIjoxNTU0ODI5NjkyLCJqdGkiOiIwR2xCOEVEckUxRWtSTlhOIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFkb25pcyBEdUJ1cXVlIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20ifQ.wE1UTnQmm0vf7DtMiCxzmnLgNc8nkEUpFIPOxcTQeo0",
 										"type": "text"
 									}
 								],
@@ -469,13 +444,13 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NTA3ODMyODEsImV4cCI6MTU1MDc4Njg4MSwibmJmIjoxNTUwNzgzMjgxLCJqdGkiOiJRbkY2U0dWeE55YXh2UENSIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.2jitUsvBSt8gF6sBxdZ-AAV9vQhokys7XiCgZTpyolY",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3MiLCJpYXQiOjE1NTQ4Mjk2OTIsImV4cCI6MTU1NDgzMzMyNywibmJmIjoxNTU0ODI5NzI3LCJqdGkiOiJhMDNsc1U5NkJKZlloV1NwIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFkb25pcyBEdUJ1cXVlIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20ifQ.kdz2JleEcdx9LEKJmhyxdDpTCcHWy9brUqpkuokiLbA",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"titulo\": \"Computador\",\n    \"descricao\": \"Uma descrição qualquer de um computador\"\n}"
+									"raw": "{\n    \"titulo\": \"Novo computador\",\n    \"descricao\": \"Uma descrição qualquer de um computador\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8000/api/v1/produtos",
@@ -515,7 +490,7 @@
 									{
 										"key": "Authorization",
 										"type": "text",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3MiLCJpYXQiOjE1NTA3ODMyODEsImV4cCI6MTU1MDc4NzEzNCwibmJmIjoxNTUwNzgzNTM0LCJqdGkiOiJzamFiS3FZbEZjNXBxdXlsIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.QKcBnRv4QHy8wOJZzaa6o0s8iqIy8sFE2T1jKTRFSYc"
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3MiLCJpYXQiOjE1NTQ4Mjk2OTIsImV4cCI6MTU1NDgzMzM3MSwibmJmIjoxNTU0ODI5NzcxLCJqdGkiOiI4a1RxdXJmMll0VnMxelM0Iiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFkb25pcyBEdUJ1cXVlIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20ifQ.8KdtOTvGH4HBLwarYsHF6X4Sl-AQkCE4OLnNWZSj2v0"
 									}
 								],
 								"body": {
@@ -558,7 +533,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3NcLzkiLCJpYXQiOjE1NTA3ODMyODEsImV4cCI6MTU1MDc4NzE3NSwibmJmIjoxNTUwNzgzNTc1LCJqdGkiOiJJNDRVandsQ1UxbVZnN3JrIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.UltRN9tnhyjNXpVPv7c2i3W1y4Z1c72PYUG2htcYEZk",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3NcLzkiLCJpYXQiOjE1NTQ4Mjk2OTIsImV4cCI6MTU1NDgzMzQzNCwibmJmIjoxNTU0ODI5ODM0LCJqdGkiOiIwUVA1TE9wQ3FLZmRKNjNqIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFkb25pcyBEdUJ1cXVlIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20ifQ.0_WHFyhUkgWZG69LLo_06X-L5a2jyBm09-6_J3d5uVQ",
 										"type": "text"
 									}
 								],
@@ -567,7 +542,7 @@
 									"raw": "{\n\t\"titulo\": \"Computador alterado\",\n\t\"descricao\": \"Descrição alterada\"\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/produtos/9",
+									"raw": "http://localhost:8000/api/v1/produtos/5",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -577,7 +552,7 @@
 										"api",
 										"v1",
 										"produtos",
-										"9"
+										"5"
 									]
 								},
 								"description": "Atualizar um produto"
@@ -601,7 +576,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3NcLzkiLCJpYXQiOjE1NTA3ODMyODEsImV4cCI6MTU1MDc4NzIzNCwibmJmIjoxNTUwNzgzNjM0LCJqdGkiOiJJYjlDNVFkRFZkT3VJRWYzIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlBlbmVsb3BlIEhhY2tldHQgViIsImVtYWlsIjoiYWRtaW5AdXNlci5jb20ifQ.8Fja94rCz789IXnVnOcN_2d8H4wp7yGA3MTPCqLqGHI",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3NcLzUiLCJpYXQiOjE1NTQ4Mjk2OTIsImV4cCI6MTU1NDgzMzQ3MCwibmJmIjoxNTU0ODI5ODcwLCJqdGkiOiJ3Uk03djc4cUU1ekNBZDNzIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFkb25pcyBEdUJ1cXVlIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20ifQ.linglxbNoq_W0iGX322PM7dEfpbV7D7MVuukn7qeBaQ",
 										"type": "text"
 									}
 								],
@@ -610,7 +585,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/produtos/9",
+									"raw": "http://localhost:8000/api/v1/produtos/5",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -620,7 +595,7 @@
 										"api",
 										"v1",
 										"produtos",
-										"9"
+										"5"
 									]
 								},
 								"description": "Deletando um produto"
@@ -684,7 +659,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9yZWZyZXNoIiwiaWF0IjoxNTUwNzc2MzM1LCJleHAiOjE1NTA3Nzk5NTQsIm5iZiI6MTU1MDc3NjM1NCwianRpIjoicG8yR3RRb3RlZkVxeEhjVyIsInN1YiI6MSwicHJ2IjoiODdlMGFmMWVmOWZkMTU4MTJmZGVjOTcxNTNhMTRlMGIwNDc1NDZhYSIsIm5hbWUiOiJQZW5lbG9wZSBIYWNrZXR0IFYiLCJlbWFpbCI6ImFkbWluQHVzZXIuY29tIn0.NfTlcx_ks5TJ0icr0k-wGalqu9NGCC2TomNgCiPovuc"
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NTQ4MjM1NDQsImV4cCI6MTU1NDgyNzE0NCwibmJmIjoxNTU0ODIzNTQ0LCJqdGkiOiJ6ekNBTGlMSkZuT3FxajEwIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFkb25pcyBEdUJ1cXVlIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20ifQ.oAkLyAvPAdJj8K5-dr4QStN1bvQjonP0ub7OWLf1nFg"
 							}
 						],
 						"body": {
@@ -702,6 +677,48 @@
 								"api",
 								"v1",
 								"refresh"
+							]
+						},
+						"description": "Exibir um produto"
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NTQ4Mjg5NjgsImV4cCI6MTU1NDgzMjU2OCwibmJmIjoxNTU0ODI4OTY4LCJqdGkiOiI1eExxOGQwSnhVY3M2b2lsIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFkb25pcyBEdUJ1cXVlIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20ifQ.JVppjQE37o-QHAMN0sAyVmKP6_AeQl86797HuDKhq2Y"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"me"
 							]
 						},
 						"description": "Exibir um produto"
