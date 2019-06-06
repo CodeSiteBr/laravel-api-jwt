@@ -9,7 +9,7 @@
 
 # Laravel API Restful com autenticação JWT
 
-Projeto api restful em Laravel 5.7 com autenticação JWT
+Projeto api restful em Laravel 5.8 com autenticação JWT
 
 ## Requisitos
 
