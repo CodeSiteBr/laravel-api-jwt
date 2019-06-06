@@ -35,7 +35,7 @@
             <th width=30%>Descriçao</th>
             <th width=30%>Ação</th>
         </tr>
-        @foreach ($data as $row)
+        @forelse ($data as $row)
             <tr>
                 <td>{{ $row->id }}</td>
                 <td>{{ $row->titulo }}</td>
@@ -60,7 +60,13 @@
                     </a>
                 </td>
             </tr>
-        @endforeach
+        @empty
+            <tr>
+                <td colspan="4">
+                    Não há produtos cadastrado
+                </td>
+            </tr>
+        @endforelse
     </table>
     <div class="row justify-content-center">
         {!! $data->links() !!}
