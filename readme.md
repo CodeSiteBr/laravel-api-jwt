@@ -39,11 +39,11 @@ Projeto api restful em Laravel 5.7 com autenticação JWT
     ```bash
     composer install
     ```
-5. Criar o arquivo .env, execute:
+4. Criar o arquivo .env, execute:
     ```bash
     cp .env.example .env
     ```
-6. Gerar uma nova chave no arquivo .env, execute:
+5. Gerar uma nova chave no arquivo .env, execute:
     ```bash
     php artisan key:generate
     ```
@@ -61,12 +61,12 @@ Projeto api restful em Laravel 5.7 com autenticação JWT
     ```
 
 
-8. Criar o arquivo de banco de dados sqlite
+7. Criar o arquivo de banco de dados sqlite
     ```bash
     touch database/database.sqlite
     ```
 
-7. Configurar no arquivo .env o acesso ao SQLite
+8. Configurar no arquivo .env o acesso ao SQLite
 
     ```bash
     DB_CONNECTION=sqlite
@@ -77,7 +77,7 @@ Projeto api restful em Laravel 5.7 com autenticação JWT
     #DB_PASSWORD=secret
     ```
 
-8. Criar as tabelas e popular com o migrate
+9. Criar as tabelas e popular com o migrate
 
     ```bash
     php artisan migrate --seed
@@ -89,7 +89,7 @@ Projeto api restful em Laravel 5.7 com autenticação JWT
     php artisan migrate:refresh --seed
     ```
 
-9. Configurar o envio de e-mail no arquivo .env
+10. Configurar o envio de e-mail no arquivo .env
 
     Se for em desenvolvimento crie uma conta no [mailtrap](https://mailtrap.io/) e configure as linhas.
 
@@ -109,7 +109,7 @@ Projeto api restful em Laravel 5.7 com autenticação JWT
     MAIL_ENCRYPTION=null
     ```
 
-13. Para iniciar o servidor do laravel
+11. Para iniciar o servidor do laravel
 
     ```bash
     php artisan serve
@@ -121,7 +121,7 @@ Projeto api restful em Laravel 5.7 com autenticação JWT
     php artisan serve --port=300
     ```
 
-14. Agora você deve ser capaz de visitar o caminho para onde você instalou o aplicativo e ver a página inicial padrão.
+12. Agora você deve ser capaz de visitar o caminho para onde você instalou o aplicativo e ver a página inicial padrão.
 
     [localhost:8000](http://localhost:8000)  
     [localhost:300](http://localhost:300/)
@@ -129,9 +129,14 @@ Projeto api restful em Laravel 5.7 com autenticação JWT
     > usuario: admin@admin.com  
     > senha: secret
 
-9. Importar o arquivo da raiz do projeto para o postman 
+13. Importar o arquivo da raiz do projeto para o postman 
+    Local
     ```bash
-    Laravel JWT.postman_collection.json 
+    Laravel JWT - Local.postman_collection.json
+    ```
+    Exemplo na hospedagem
+    ```bash
+    Laravel JWT - Servidor.postman_collection.json
     ```
 
 ## License

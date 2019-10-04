@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "8eefea1e-1117-4f2b-9ce0-4057a3285426",
-		"name": "Laravel JWT - Local",
+		"_postman_id": "2eed6073-49c9-415d-acb9-3ffcffbe5d0f",
+		"name": "Laravel JWT - Servidor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -18,12 +18,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/produtos",
+							"raw": "http://api.codesites.com.br/api/produtos",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"produtos"
@@ -62,12 +64,14 @@
 							"raw": "{\n    \"titulo\": \"Computador\",\n    \"descricao\": \"Uma descrição qualquer de um computador\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/produtos",
+							"raw": "http://api.codesites.com.br/api/produtos",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"produtos"
@@ -87,12 +91,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/produtos/1",
+							"raw": "http://api.codesites.com.br/api/produtos/1",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"produtos",
@@ -120,12 +126,14 @@
 							"raw": "{\n    \"titulo\": \"Editado\",\n    \"descricao\": \"Descrição editada\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/produtos/1",
+							"raw": "http://api.codesites.com.br/api/produtos/1",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"produtos",
@@ -146,12 +154,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/produtos/4",
+							"raw": "http://api.codesites.com.br/api/produtos/4",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"produtos",
@@ -199,12 +209,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/usuarios",
+									"raw": "http://api.codesites.com.br/api/v1/usuarios",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -242,12 +254,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/usuarios",
+									"raw": "http://api.codesites.com.br/api/v1/usuarios",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -287,12 +301,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/usuarios/1",
+									"raw": "http://api.codesites.com.br/api/v1/usuarios/1",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -331,12 +347,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/usuarios/1",
+									"raw": "http://api.codesites.com.br/api/v1/usuarios/1",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -358,12 +376,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/users/1",
+									"raw": "http://api.codesites.com.br/api/v1/users/1",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -401,7 +421,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvcHJvZHV0b3NcLzEiLCJpYXQiOjE1NjA5NDU5NDEsImV4cCI6MTU2MDk0OTgwNiwibmJmIjoxNTYwOTQ2MjA2LCJqdGkiOiJlSllTdllaUlNRNUxxWlJTIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IlByb2YuIEphY2ludG8gS2Fzc3Vsa2UgViIsImVtYWlsIjoiYWRtaW5AYWRtaW4uY29tIn0.zi4EpVAyhMLWao8iNkJh7mXfiKAfJXevWBEP-6M_wic",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkuY29kZXNpdGVzLmNvbS5iclwvYXBpXC92MVwvcHJvZHV0b3MiLCJpYXQiOjE1NzAyMDg1NzksImV4cCI6MTU3MDIxMjIxOSwibmJmIjoxNTcwMjA4NjE5LCJqdGkiOiJLRVV4aWZSZ3h6SDNNeDlCIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6Ik1yLiBLZW5kYWxsIERvbm5lbGx5IiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20ifQ.42ZqUM_FxXtBi2I17xLNkDgGNK-HXxx-iNX8fuHGkPc",
 										"type": "text"
 									}
 								],
@@ -410,12 +430,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/produtos",
+									"raw": "http://api.codesites.com.br/api/v1/produtos",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -453,12 +475,14 @@
 									"raw": "{\n    \"titulo\": \"Computador\",\n    \"descricao\": \"Uma descrição qualquer de um computador\"\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/produtos",
+									"raw": "http://api.codesites.com.br/api/v1/produtos",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -498,12 +522,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/produtos/1",
+									"raw": "http://api.codesites.com.br/api/v1/produtos/1",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -542,12 +568,14 @@
 									"raw": "{\n\t\"titulo\": \"Computador alterado\",\n\t\"descricao\": \"Descrição alterada\"\n}"
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/produtos/1",
+									"raw": "http://api.codesites.com.br/api/v1/produtos/1",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -585,12 +613,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "http://localhost:8000/api/v1/produtos/1",
+									"raw": "http://api.codesites.com.br/api/v1/produtos/1",
 									"protocol": "http",
 									"host": [
-										"localhost"
+										"api",
+										"codesites",
+										"com",
+										"br"
 									],
-									"port": "8000",
 									"path": [
 										"api",
 										"v1",
@@ -626,12 +656,14 @@
 							"raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"secret\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/v1/login",
+							"raw": "http://api.codesites.com.br/api/v1/login",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -667,12 +699,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/v1/refresh",
+							"raw": "http://api.codesites.com.br/api/v1/refresh",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -709,12 +743,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/v1/me",
+							"raw": "http://api.codesites.com.br/api/v1/me",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
@@ -751,12 +787,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:8000/api/v1/logout",
+							"raw": "http://api.codesites.com.br/api/v1/logout",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"api",
+								"codesites",
+								"com",
+								"br"
 							],
-							"port": "8000",
 							"path": [
 								"api",
 								"v1",
